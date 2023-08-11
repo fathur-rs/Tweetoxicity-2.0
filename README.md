@@ -13,6 +13,9 @@ The program also utilizes Selenium and BeautifulSoup to scrap data from [Nitter]
 
 The scrapped data is then sent to the program which keeps the machine learning model, and asks the program politely to assess the given user with its already made fined-tuned pre-trained transformers model. The result, having the shape of a String data is then sent back to UI to be outputted as a readable human language to the website. 
 
+## How to Clone the Repo?
+First thing first, clone the repo and clone the pre-trained model [HuggingFace](https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier) inside API directory.
+
 ## Frequently Asked Question
 **Q : "This program sounds controversial"**<br>
 A : Yes. We couldn't hide the fact that making such a program will spawn controversial discussions about the true nature of this program, however, we are only interested in the use of Flask as an integral part of nowadays web applications. The idea behind the program itself is derived from other popular Twitter user analytic services, we just made them open-source and free.
