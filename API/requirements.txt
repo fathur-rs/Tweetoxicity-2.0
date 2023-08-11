@@ -1,0 +1,12 @@
+fastapi[all]
+nltk
+torch 
+uvicorn
+transformers
+selenium
+pandas
+bs4
+typing
+pydantic
+Sastrawi
+

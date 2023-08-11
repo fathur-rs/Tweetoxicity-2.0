@@ -1,0 +1,6 @@
+streamlit
+stqdm
+pandas
+streamlit-echarts
+streamlit-extras
+streamlit-ext

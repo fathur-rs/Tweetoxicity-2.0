@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/myprojecthub-393601/tweetoxicity-api', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','gcr.io/myprojecthub-393601/tweetoxicity-api']
