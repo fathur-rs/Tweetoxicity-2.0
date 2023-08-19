@@ -55,6 +55,8 @@ async def preprocessing(tweets: Tweets):
     from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
     from nltk import word_tokenize
     import pandas as pd
+    import nltk
+    nltk.download('punkt')
 
     def bersih_text(text): # first
         text = str(text)

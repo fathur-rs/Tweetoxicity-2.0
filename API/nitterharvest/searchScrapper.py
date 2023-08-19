@@ -78,6 +78,6 @@ def search_tweets(query: str, limit: int = 100) -> list:
     except Exception as _:
         print("Finished loading all content or an error occurred:", str(_))
         
-    
+    driver.quit()
     # scraped tweets
     return tweets_corpus

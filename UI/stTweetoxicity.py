@@ -195,14 +195,14 @@ if query == "Profile":
         except Exception as error:
             print(error)
 elif query == "Hashtag/Topics":
-    searching = st.text_input('Input Twitter Query. e.g. "#jokowi until:2020-10-20"', "")
+    searching = st.text_input('Input Twitter Query. e.g. "#indonesia"', "")
     if searching == "":
         pass
     else:
         try:
             # SCRAPPER
             with st.spinner("Scrape User Tweets..."):
-                scrap_data = scrapper_search(searching)
+                scrap_data = scrapper_search(f"{searching} lang:id")
                 
             # check if twttiet account is exist or private
             if not scrap_data['data']:
@@ -225,11 +225,11 @@ elif query == "Hashtag/Topics":
             get_most_sentiment = calc_sentiment.sort_values(by="tweet", ascending=False).reset_index(drop=True).iloc[0, :]
 
             if get_most_sentiment['label'] == "negative":
-                st.markdown(f"<p style='text-align: center; color: #dc143c;'>{searching.split()[0].title()} needs a day off of Twitter. Most {searching.split()[0].title()} latest tweets have a negative sentiment</p><br />", unsafe_allow_html=True)
+                st.markdown(f"<p style='text-align: center; color: #dc143c;'>{searching} needs a day off of Twitter. Most {searching} latest tweets have a negative sentiment</p><br />", unsafe_allow_html=True)
             elif get_most_sentiment['label'] == "positive":
-                st.markdown(f"<p style='text-align: center; color: #2e8b57;'>{searching.split()[0].title()} is pretty cool. Most {searching.split()[0].title()} latest tweets have a positive sentiment</p><br />", unsafe_allow_html=True)
+                st.markdown(f"<p style='text-align: center; color: #2e8b57;'>{searching} is pretty cool. Most {searching} latest tweets have a positive sentiment</p><br />", unsafe_allow_html=True)
             elif get_most_sentiment['label'] == "neutral":
-                st.markdown(f"<p style='text-align: center; color: violet;'>{searching.split()[0].title()} is pretty chill. Most {searching.split()[0].title()} latest tweets have a neutral sentiment</p><br />", unsafe_allow_html=True)
+                st.markdown(f"<p style='text-align: center; color: violet;'>{searching} is pretty chill. Most {searching} latest tweets have a neutral sentiment</p><br />", unsafe_allow_html=True)
                 
         #     # PIE CHART
             data_count = []
@@ -287,12 +287,12 @@ elif query == "Hashtag/Topics":
             ste.download_button(
                 label="Download data as CSV",
                 data=convert_df(df),
-                file_name= f"{searching.split()[0].title()}_data.csv",
+                file_name= f"{'_'.join(searching.split())}_data.csv",
                 mime="text/csv"
             )
             
         except IndexError:
-            st.error(f"Sorry we can't scrape the tweets, because {searching.split()[0].title()} query is does not exists....", icon="🚨")
+            st.error(f"Sorry we can't scrape the tweets, because {searching} query is does not exists....", icon="🚨")
         except Exception as error:
             print(error)
     

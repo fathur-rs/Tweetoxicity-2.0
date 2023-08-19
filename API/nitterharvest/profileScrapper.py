@@ -70,5 +70,7 @@ def profile_tweets(username: str, limit: int = 100) -> list:
     # If there's no element left to scrape then error -> scrapped finish       
     except Exception as _:
         print("Finished loading all content or an error occurred:", str(_))
-        
+    
+    driver.quit()
+    
     return tweets_corpus
