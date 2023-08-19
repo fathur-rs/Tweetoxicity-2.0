@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Union
-from scrapper.NitterSelenium import start_webdriver, scrape_tweets 
+from nitterharvest.profileScrapper import profile_tweets
+from nitterharvest.searchScrapper import search_tweets
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import pipeline
 
@@ -23,24 +24,27 @@ async def welcome_page():
     }
 
 
-class Username(BaseModel):
-    username: Union[str, None] = None
+class Query(BaseModel):
+    txt: Union[str, None] = None
     
-@app.post("/scrapper")
-async def nitter_selenium_scrapper(username: Username):
+@app.post("/scrapper/profile")
+async def nitter_selenium_scrapper_profile(username: Query):
     
-    driver = start_webdriver(url=f'https://nitter.net/{username.username}')
-    tweets = scrape_tweets(driver=driver)
-    
-    # convert to csv
-    # tweets.to_csv(f'./csv/{username.username}.csv', index=False)
-    tweets_json = tweets['tweets'].tolist()
-        
-    driver.quit()
+    tweets = profile_tweets(username=username.txt, limit=100)
     
     return {
-        "data": tweets_json 
+        "data": tweets 
     }
+
+@app.post("/scrapper/search")
+async def nitter_selenium_scrapper_search(query: Query):
+    
+    tweets = search_tweets(query=query.txt, limit=100)
+    
+    return {
+        "data": tweets
+    }
+
     
 class Tweets(BaseModel):
     tweets: Union[list, None] = None
@@ -50,8 +54,6 @@ async def preprocessing(tweets: Tweets):
     import re, string
     from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
     from nltk import word_tokenize
-    import nltk
-    nltk.download('punkt')
     import pandas as pd
 
     def bersih_text(text): # first
@@ -81,8 +83,8 @@ async def preprocessing(tweets: Tweets):
     
     
     data = tweets.tweets
-    df = pd.DataFrame(data, columns=['tweets'])
-    df['tweets_clean'] = df['tweets'].apply(lambda x: bersih_text(x)).apply(tokennization).apply(stopword).apply(lambda x: " ".join(x))
+    df = pd.DataFrame.from_records(data).fillna(0)
+    df['tweets_clean'] = df['tweet'].apply(lambda x: bersih_text(x)).apply(tokennization).apply(stopword).apply(lambda x: " ".join(x))
     df = df[df['tweets_clean'].apply(lambda x: len(x.split())) >= 1]
     
     return {
