@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/myprojecthub-393601/tweetoxicity-streamlit', '.']
+  args: ['build', '-t', 'gcr.io/myproject-397823/tweetoxicity-streamlit', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/myprojecthub-393601/tweetoxicity-streamlit']
+  args: ['push','gcr.io/myproject-397823/tweetoxicity-streamlit']

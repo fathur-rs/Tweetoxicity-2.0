@@ -4,3 +4,4 @@ pandas
 streamlit-echarts
 streamlit-extras
 streamlit-ext
+python-dotenv

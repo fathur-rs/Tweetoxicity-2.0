@@ -7,6 +7,9 @@ import pandas as pd
 from streamlit_echarts import st_echarts
 from collections import Counter
 from PIL import Image
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # ----- PAGE SETTING -----
 PAGE_TITLE = "Tweetoxicity"
@@ -52,7 +55,7 @@ st.markdown(f"<p class='description' style='text-align: center;'>TweeToxicity is
 # ----- BACKEND -----
 ## --- CONFIG ---
 class CONFIG:
-    url = "https://tweetoxicity-api-snqvw2zpga-et.a.run.app"
+    url = os.getenv("API_URL")
 
 ## --- API ---
 def scrapper_profile(username: str):
