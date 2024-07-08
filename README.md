@@ -4,6 +4,8 @@
 ## What is it?
 **Tweetoxicity:2.0** is a program that analyses Twitter user behavior through their actions on their Twitter Profile. The program utilizes machine learning to give Twitter users appropriate score according to their tweets or retweets. This program is meant for educational purposes and no ill intentions exists prior to creating this program. This program was an update from my old project called [TweeToxicity](https://github.com/Neek0tine/Tweetoxicity). 
 
+<img src="https://github.com/fathur-rs/Tweetoxicity-2.0/blob/main/Tweetoxicity.jpg" alt="TweeToxicity" width="800"/><br>
+
 ## How does it work?
 The program also utilizes Selenium and BeautifulSoup to scrap data from [Nitter](https://nitter.poast.org).
 
