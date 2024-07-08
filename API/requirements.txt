@@ -1,5 +1,4 @@
 fastapi[all]
-nltk
 torch 
 uvicorn
 transformers
@@ -8,5 +7,4 @@ pandas
 bs4
 typing
 pydantic
-Sastrawi
 

@@ -5,3 +5,4 @@ streamlit-echarts
 streamlit-extras
 streamlit-ext
 python-dotenv
+Sastrawi
