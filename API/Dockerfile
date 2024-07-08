@@ -23,7 +23,7 @@ COPY . /app
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.tx
+RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y git
 
 RUN wget https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz && \
