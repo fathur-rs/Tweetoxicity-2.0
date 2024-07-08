@@ -9,8 +9,23 @@ The program also utilizes Selenium and BeautifulSoup to scrap data from [Nitter]
 
 The scrapped data is then sent to the program which keeps the machine learning model, and asks the program politely to assess the given user with its already made fined-tuned pre-trained transformers model. The result, having the shape of a String data is then sent back to UI to be outputted as a readable human language to the website. 
 
-## How to Clone the Repo?
-First thing first, clone the repo and clone the pre-trained model [HuggingFace](https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier) inside API directory.
+## How to Start the Web App
+
+To start the web app using Docker Compose, follow these steps:
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+2. Navigate to the project directory in your terminal.
+3. Run the following command:
+
+   ```
+   docker-compose up --build
+   ```
+
+   This command will build the Docker images (if needed) and start the containers defined in the docker-compose.yml file.
+
+4. Once the containers are up and running, you should be able to access the web app through your browser at the appropriate address (typically localhost with the specified port).
+
+5. To stop the app, you can use Ctrl+C in the terminal where docker-compose is running, or run `docker-compose down` in a new terminal window from the project directory.
 
 ## Frequently Asked Question
 **Q : "This program sounds controversial"**<br>
