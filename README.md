@@ -22,7 +22,7 @@ The scrapped data is then sent to the program which keeps the machine learning m
 
    This command will build the Docker images and start the containers defined in the docker-compose.yml file.
 
-4. Once the containers are up and running, you should be able to access the web app through your browser at the localhost:8080 address.
+4. Once the containers are up and running, you should be able to access the web app through your browser at the `localhost:8080` address.
 
 5. To stop the app, you can use Ctrl+C in the terminal where docker-compose is running, or run `docker-compose down` in a new terminal window from the project directory.
 
