@@ -10,7 +10,7 @@ The program also utilizes Selenium and BeautifulSoup to scrap data from [Nitter]
 The scrapped data is then sent to the program which keeps the machine learning model, and asks the program politely to assess the given user with its already made fined-tuned pre-trained transformers model. The result, having the shape of a String data is then sent back to UI to be outputted as a readable human language to the website. 
 
 ## How to Start the Web App
-1. Make sure you have Docker and Docker Compose installed on your system.
+1. Make sure you have Docker installed on your system.
 2. Navigate to the project directory in your terminal.
 3. Run the following command:
 
