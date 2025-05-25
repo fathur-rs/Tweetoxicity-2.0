@@ -1,7 +1,7 @@
 <img src="https://github.com/Neek0tine/Tweetoxicity/blob/main/assets/toxicitytweet.png" alt="TweeToxicity" width="800"/><br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Supported-blue?style=flat-square&logo=docker)](https://docs.docker.com/compose/)
-[![Python](https://img.shields.io/badge/Python-Used-yellow?style=flat-square&logo=python)](https://www.python.org/) <p align="center">
+[![Python](https://img.shields.io/badge/python-3.10-blue.svg?style=flat-square&logo=python)](https://www.python.org/) <p align="center">
 
 ## What is it?
 **Tweetoxicity:2.0** is a program that analyses Twitter user behavior through their actions on their Twitter Profile. The program utilizes machine learning to give Twitter users appropriate score according to their tweets or retweets. This program is meant for educational purposes and no ill intentions exists prior to creating this program. This program was an update from my old project called [TweeToxicity](https://github.com/Neek0tine/Tweetoxicity). 
